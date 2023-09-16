@@ -13,14 +13,14 @@
 	<button onclick="redirect()">Launch</button>
 	<script type="text/javascript">
   var iframe;
-		var d_site = 'https://now.gg';
-		function redirect(){
+		function redirect(url){
 		navigator.serviceWorker.register('uv_edit/sw.js', {
 	        scope: __uv$config.prefix
 	    }).then(() => {
-	        let url = d_site;
 	        if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
 	        else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
+			document.querySelectorAll("button")[0].outerHTML = "";
+			document.querySelectorAll("button")[1].outerHTML = "";
     iframe = document.querySelector("iframe");
     iframe.style.border = "none";
     iframe.style.width = "100%";
