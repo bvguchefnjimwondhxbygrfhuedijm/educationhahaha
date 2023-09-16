@@ -13,7 +13,6 @@
 	<button onclick="redirect()">Launch</button>
 	<script type="text/javascript">
   var iframe;
-	window.addEventListener('load', function() {
 		var d_site = 'https://now.gg';
 		function redirect(){
 		navigator.serviceWorker.register('uv_edit/sw.js', {
@@ -36,7 +35,6 @@
 		    if (/^http(s?):\/\//.test(val) || val.includes('.') && val.substr(0, 1) !== ' ') return true;
 		    return false;
 		};
-	});
 		    if(document.referrer != '' || window == top){
       window = "PASS";
       document = "PASS";
