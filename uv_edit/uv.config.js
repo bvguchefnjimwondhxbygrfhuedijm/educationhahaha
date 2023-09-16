@@ -1,6 +1,6 @@
 /*global Ultraviolet*/
 self.__uv$config = {
-    prefix: '/uv_edit/education/',
+    prefix: '/educationhahaha/uv_edit/education/',
     bare: 'https://8vk2d6-6987.csb.app/',
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
