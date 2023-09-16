@@ -8,13 +8,8 @@
 <body>
 	 <script src="uv_edit/uv.bundle.js"></script>
     <script src="uv_edit/uv.config.js"></script>
-  <iframe></iframe>
-	    <button id="history" onclick="setHis();"></button>
-	<button onclick="redirect('https://now.gg/play/roblox-corporation/5349/roblox')">Launch Roblox</button>
-	<button onclick="redirect('https://now.gg/play/uncube/7074/now')">Launch Android OS</button>
-	<button onclick="redirect('https://now.gg/play/Aptoide/1440/aptoide')">Launch Aptoide</button>
 	<script type="text/javascript">
-		function redirect(url){
+	window.addEventListener('load', function() {
 		var d_site = 'https://now.gg/play/roblox-corporation/5349/roblox';
 		function sleep(milliseconds) {
   const date = Date.now();
@@ -39,7 +34,6 @@
 		    if (/^http(s?):\/\//.test(val) || val.includes('.') && val.substr(0, 1) !== ' ') return true;
 		    return false;
 		};
-		}
-	</script>
+	});
 </body>
 </html>
