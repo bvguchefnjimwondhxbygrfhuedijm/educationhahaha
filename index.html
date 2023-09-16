@@ -28,7 +28,8 @@ x = document.querySelectorAll("button");
 			for(var i = 0; i < x.length; i++){
 				x[i].outerHTML = "";
 			}
-			
+		    document.body.style.margin = "0";
+    document.body.style.height = "100vh";	
     iframe = document.querySelector("iframe");
     iframe.style.border = "none";
     iframe.style.width = "100%";
