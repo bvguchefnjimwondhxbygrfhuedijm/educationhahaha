@@ -10,7 +10,9 @@
     <script src="uv_edit/uv.config.js"></script>
   <iframe></iframe>
 	    <button id="history" onclick="setHis();"></button>
-	<button onclick="redirect()">Launch</button>
+	<button onclick="redirect('https://now.gg')">Launch Homepage</button>
+	<button onclick="redirect('https://now.gg/play/uncube/7074/now')">Launch Android OS</button>
+	<button onclick="redirect('https://now.gg/play/Aptoide/1440/aptoide')">Launch Aptoide</button>
 	<script type="text/javascript">
   var iframe;
 		function redirect(url){
@@ -21,6 +23,9 @@
 	        else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
 			document.querySelectorAll("button")[0].outerHTML = "";
 			document.querySelectorAll("button")[1].outerHTML = "";
+			document.querySelectorAll("button")[2].outerHTML = "";
+			document.querySelectorAll("button")[3].outerHTML = "";
+			
     iframe = document.querySelector("iframe");
     iframe.style.border = "none";
     iframe.style.width = "100%";
