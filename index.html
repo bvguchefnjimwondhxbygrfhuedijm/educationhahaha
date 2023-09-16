@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="robots" content="noindex" />
+</head>
+<body>
+	 <script src="uv_edit/uv.bundle.js"></script>
+    <script src="uv_edit/uv.config.js"></script>
+  <iframe></iframe>
+	<script type="text/javascript">
+  var iframe;
+	window.addEventListener('load', function() {
+		var d_site = 'https://now.gg';
+		navigator.serviceWorker.register('uv_edit/sw.js', {
+	        scope: __uv$config.prefix
+	    }).then(() => {
+	        let url = d_site;
+	        if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
+	        else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
+    iframe = document.querySelector("iframe");
+    iframe.style.border = "none";
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    iframe.style.margin = "0";
+    iframe.referrerpolicy = "no-referrer";
+    iframe.allow = "fullscreen";
+    iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
+	    });
+		function isUrl(val = ''){
+		    if (/^http(s?):\/\//.test(val) || val.includes('.') && val.substr(0, 1) !== ' ') return true;
+		    return false;
+		};
+	});
+	</script>
+</body>
+</html>
