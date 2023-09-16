@@ -16,6 +16,7 @@
 	<script type="text/javascript">
 var int;
   var iframe;
+		var x;
 		function redirect(url){
 		navigator.serviceWorker.register('uv_edit/sw.js', {
 	        scope: __uv$config.prefix
@@ -23,10 +24,10 @@ var int;
 	        if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
 	        else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
 			clearInterval(int);
-			document.querySelectorAll("button")[0].outerHTML = "";
-			document.querySelectorAll("button")[1].outerHTML = "";
-			document.querySelectorAll("button")[2].outerHTML = "";
-			document.querySelectorAll("button")[3].outerHTML = "";
+x = document.querySelectorAll("button");
+			for(var i = 0; i < x.length; i++){
+				x[i].outerHTML = "";
+			}
 			
     iframe = document.querySelector("iframe");
     iframe.style.border = "none";
